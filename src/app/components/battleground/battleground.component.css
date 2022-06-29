@@ -1,0 +1,36 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto Mono', monospace;
+}
+
+
+body{
+    height: 100%;
+    width: 100%;
+    min-height: 110vh;
+    background-image: url(src\assets\img\arena.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+}
+
+.srchbr{
+    display: flex;
+    justify-content: space-between;
+}
+
+input[type=text] {
+    margin-top: 200px;
+    margin-left: 150px;
+    margin-right: 150px;
+    height: 75px;
+    width: 200px;
+    -webkit-transition: width 0.4s ease-in-out;
+    transition: width 0.4s ease-in-out;
+  }
+  
+input[type=text]:focus {
+    width: 25%;
+  }
