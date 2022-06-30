@@ -1,6 +1,9 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { PokemonDataService } from 'src/app/services/pokemon-data.service';
+import { POKEMON } from 'src/app/mock-pokemon';
+import { Pokemon } from 'src/app/models/pokemon.model';
+
 
 @Component({
   selector: 'app-battleground',
@@ -37,8 +40,44 @@ export class BattlegroundComponent implements OnInit {
   getPokemon(name:string){
     this.pokemon.getPokemonData(name)
   }
+  pokemon = POKEMON; 
+
+  fighterOne!: Pokemon;
+  fighterTwo!: Pokemon;
+
+  constructor() { }
 
   ngOnInit(): void {
+  }
+
+  getFighterOne() {
+    randomNumber: Number; 
+    const randomNumber = Math.floor(Math.random() * 6); 
+    console.log(randomNumber);
+    console.log(this.pokemon[randomNumber]);
+    this.fighterOne = this.pokemon[randomNumber]; 
+  
+  }
+
+  getFighterTwo() {
+    randomNumber: Number; 
+    const randomNumber = Math.floor(Math.random() * 6); 
+    console.log(randomNumber);
+    console.log(this.pokemon[randomNumber]);
+    this.fighterTwo = this.pokemon[randomNumber]; 
+  }
+
+  
+  getFightResults(fighterOne: any, fighterTwo: any) {
+    let fighterOneStrength =  fighterOne.stats.hp;
+    let fighterTwoStrength = fighterTwo.stats.hp; 
+    if (fighterOneStrength > fighterTwoStrength) {
+      console.log(fighterOne.name);
+      return fighterOne;
+    } else {
+      console.log(fighterTwo.name)
+      return fighterTwo;
+    }
   }
 
 }

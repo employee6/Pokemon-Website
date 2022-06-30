@@ -2,7 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable, throwError} from "rxjs";
 import { catchError, retry } from "rxjs/operators";
-import { Pokemon } from '../components/pokemon/pokemon.component';
+// import { Pokemon } from '../components/pokemon/pokemon.component';
 
 @Injectable({
   providedIn: 'root'
