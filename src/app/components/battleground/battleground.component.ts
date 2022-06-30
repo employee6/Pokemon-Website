@@ -21,7 +21,7 @@ export class BattlegroundComponent{
   public Champion2="";
   public APIcallChampion1="https://pokeapi.co/api/v2/pokemon/";
   public APIcallChampion2="https://pokeapi.co/api/v2/pokemon/";
-  
+  fightStart = false;
 
   getPokemon1(name:string){
     this.pokemon.getPokemonData(name).subscribe(data => { 
@@ -37,8 +37,12 @@ export class BattlegroundComponent{
 
   getFightResults(fighterOne: any, fighterTwo: any) {
     if (fighterOne.base_experience > fighterTwo.base_experience){
+      this.fightStart = true;
+      console.log(fighterOne.name);
       return fighterOne
     } else {
+      this.fightStart = true;
+      console.log(fighterTwo.name)
       return fighterTwo
     }
   }

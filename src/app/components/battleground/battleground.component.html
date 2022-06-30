@@ -14,8 +14,12 @@
 
     <div class="srchbr">
         <input type="text" name="search" placeholder="Champion 1..." #champion1 (keydown.enter)="getPokemon1(champion1.value)">
+        <div>
+            <button type="button" (click)="getFightResults(fighterOne, fighterTwo)"> FIGHT </button>
+        </div>
         <input type="text" name="search" placeholder="Champion 2..." #champion2 (keydown.enter)="getPokemon2(champion2.value)">
     </div>
+    <h2 *ngIf="fightStart"> {{getFightResults(fighterOne, fighterTwo).name}} Wins! </h2>
     <div class="fighters">
         <img src="{{fighterOne.sprites.front_default}}" id="one"> 
         <img src="{{fighterTwo.sprites.front_default}}"> 
