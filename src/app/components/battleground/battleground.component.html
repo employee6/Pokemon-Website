@@ -11,13 +11,32 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@1,300&display=swap" rel="stylesheet">
 </head>
 <body>
+    <!--
     <div class="srchbr">
         <input type="text" name="search" placeholder="Champion 1..." #champion1 (keydown.enter)="getPokemon1(champion1.value)">
         <input type="text" name="search" placeholder="Champion 2..." #champion2 (keydown.enter)="getPokemon2(champion2.value)">
     </div>
+-->
+    <div class="stage">
+        <div id="fighter1">
+            <button type="button" (click)="getFighterOne()"> ROULETTE </button>
+            <div *ngIf="fighterOne">
+                <img [src] ="fighterOne.url"> 
+            </div>
+        </div>
+        <div id="fight-stage">
+            <button type="button" (click)="getFightResults(fighterOne, fighterTwo)"> FIGHT </button>
+            <h1> {{ getFightResults(fighterOne, fighterTwo).name }} Wins!!!</h1>
+        </div>
+        <div id="fighter2">
+            <button type="button" (click)="getFighterTwo()"> ROULETTE </button>
+            <div>
+                <img [src] ="fighterTwo.url">
+            </div>
+        </div>
 
-    <div class="main-stage">
-        <h1 height="500">hello</h1>
     </div>
+    
+
 </body>
 </html>

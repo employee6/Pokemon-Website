@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 
-export class Pokemon {
+export class PokemonG {
   constructor(
     public id : number,
     public name : string,

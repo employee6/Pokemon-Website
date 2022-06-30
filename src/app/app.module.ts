@@ -9,7 +9,8 @@ import { CardsComponent } from './components/cards/cards.component';
 import { ContactComponent } from './components/contact/contact.component';
 import {HttpClientModule} from '@angular/common/http';
 import { BattlegroundComponent } from './components/battleground/battleground.component';
-import { PokemonComponent } from './components/pokemon/pokemon.component'
+import { PokemonComponent } from './components/pokemon/pokemon.component';
+import { FightercardsComponent } from './components/fightercards/fightercards.component'
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { PokemonComponent } from './components/pokemon/pokemon.component'
     CardsComponent,
     ContactComponent,
     BattlegroundComponent,
-    PokemonComponent
+    PokemonComponent,
+    FightercardsComponent
   ],
   imports: [
     BrowserModule,
