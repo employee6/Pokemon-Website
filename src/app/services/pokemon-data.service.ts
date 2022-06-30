@@ -19,4 +19,5 @@ export class PokemonDataService {
   getPokemonData(name:string):Observable<any>{
     return this.httpClient.get<any>(this.pokemonAPIChamp1+name.toLowerCase());
   }
+  
 }
