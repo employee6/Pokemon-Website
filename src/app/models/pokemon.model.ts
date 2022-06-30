@@ -10,6 +10,6 @@ export interface Pokemon {
         speed:number
     }];
     sprites : [{
-        front_default: string
+        front_default: string,
     }]
 }

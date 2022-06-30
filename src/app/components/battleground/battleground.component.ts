@@ -26,9 +26,11 @@ export class BattlegroundComponent{
   getPokemon1(name:string){
     this.pokemon.getPokemonData(name).subscribe(data => { 
       this.fighterOne = (({name, base_experience, stats, sprites}) => ({name, base_experience, stats, sprites}))(data); 
-     
-      
+    
+      console.log(this.fighterOne.stats[0]);
     })
+    console.log(this.fighterOne.stats[0] );
+    
   }
   
   getPokemon2(name:string){
