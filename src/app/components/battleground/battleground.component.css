@@ -35,13 +35,17 @@ input[type=text]:focus {
     width: 25%;
   }
 
-#stage {
-    margin: 100px;
+.fighters {
     display: flex;
-    justify-content: space-between;
+    justify-content:space-between;
+    margin-top: 200px;
+    margin-left: 250px;
+    margin-right: 250px;
+    height: 500px;
 }
 
-.fighter1 {
-    display: flex;
-    justify-content: center;
+
+.fighters #one{
+    -webkit-transform: scaleX(-1);
+    transform: scaleX(-1);
 }
