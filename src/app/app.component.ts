@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { PokemonDataService } from './services/pokemon-data.service';
 
 @Component({
@@ -7,7 +7,12 @@ import { PokemonDataService } from './services/pokemon-data.service';
   styleUrls: ['./app.component.css']
 })
 
-export class AppComponent {
-  constructor(private pokemonData : PokemonDataService){}
+export class AppComponent{
+  pokemonData:any;
+
+  constructor(private service : PokemonDataService){}
+
   title = 'pokemon-site';
+
+
 }

@@ -12,10 +12,12 @@
 </head>
 <body>
     <div class="srchbr">
-        <input type="text" name="search" placeholder="Champion 1...">
-        <input type="text" name="search" placeholder="Champion 2...">
+        <input type="text" name="search" placeholder="Champion 1..." #champion1 (keydown.enter)="getPokemon(champion1.value)">
+        <input type="text" name="search" placeholder="Champion 2..." #champion2 (keydown.enter)="searchChampion2ByName(champion2.value)">
     </div>
 
-
+    <div class="main-stage">
+        <h1 height="500">hello</h1>
+    </div>
 </body>
 </html>
