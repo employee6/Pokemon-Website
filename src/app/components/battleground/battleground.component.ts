@@ -39,11 +39,11 @@ export class BattlegroundComponent{
     if (fighterOne.base_experience > fighterTwo.base_experience){
       this.fightStart = true;
       console.log(fighterOne.name);
-      return fighterOne
+      return fighterOne;
     } else {
       this.fightStart = true;
       console.log(fighterTwo.name)
-      return fighterTwo
+      return fighterTwo;
     }
   }
 
