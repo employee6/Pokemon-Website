@@ -1,7 +1,8 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable, throwError} from "rxjs";
-import { catchError, retry } from "rxjs/operators";
+import { catchError, map, retry } from "rxjs/operators";
+import { Pokemon } from '../models/pokemon.model';
 // import { Pokemon } from '../components/pokemon/pokemon.component';
 
 @Injectable({
@@ -15,25 +16,29 @@ export class PokemonDataService {
 
   constructor(private httpClient: HttpClient) { }
 
-  getPokemonDataChamp1(name:string){
-    this.httpClient.get<any>(this.pokemonAPIChamp1+name.toLowerCase()).subscribe(data => {
-      console.log(data);
-      console.log(data.name);
-      console.log("HP is "+data.stats[0].base_stat);
-      console.log("Attack is "+data.stats[1].base_stat);
-      console.log("Defense is "+data.stats[2].base_stat);
-      console.log("Speed is "+data.stats[5].base_stat);
-    });
-  }
+  // getPokemonDataChamp1(name:string){
+  //   this.httpClient.get<any>(this.pokemonAPIChamp1+name.toLowerCase()).subscribe(data => {
+  //     console.log(data);
+  //     console.log(data.name);
+  //     console.log("HP is "+data.stats[0].base_stat);
+  //     console.log("Attack is "+data.stats[1].base_stat);
+  //     console.log("Defense is "+data.stats[2].base_stat);
+  //     console.log("Speed is "+data.stats[5].base_stat);
+  //   });
+  // }
 
-  getPokemonDataChamp2(name:string){
-    this.httpClient.get<any>(this.pokemonAPIChamp2+name.toLowerCase()).subscribe(data => {
-      console.log(data);
-      console.log(data.name);
-      console.log("HP is "+data.stats[0].base_stat);
-      console.log("Attack is "+data.stats[1].base_stat);
-      console.log("Defense is "+data.stats[2].base_stat);
-      console.log("Speed is "+data.stats[5].base_stat);
-    });
+  // getPokemonDataChamp2(name:string){
+  //   this.httpClient.get<any>(this.pokemonAPIChamp2+name.toLowerCase()).subscribe(data => {
+  //     console.log(data);
+  //     console.log(data.name);
+  //     console.log("HP is "+data.stats[0].base_stat);
+  //     console.log("Attack is "+data.stats[1].base_stat);
+  //     console.log("Defense is "+data.stats[2].base_stat);
+  //     console.log("Speed is "+data.stats[5].base_stat);
+  //   });
+  // }
+
+  getPokemonData(name:string):Observable<Pokemon>{
+    return this.httpClient.get<Pokemon>(this.pokemonAPIChamp1+name.toLowerCase());
   }
 }
