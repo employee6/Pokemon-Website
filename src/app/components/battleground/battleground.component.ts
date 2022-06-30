@@ -15,8 +15,8 @@ export class BattlegroundComponent{
 
   constructor(private pokemon : PokemonDataService) { }
 
-  fighterOne!: Pokemon; 
-  fighterTwo!: Pokemon; 
+  fighterOne!: any; 
+  fighterTwo!: any; 
   public Champion1="";
   public Champion2="";
   public APIcallChampion1="https://pokeapi.co/api/v2/pokemon/";
@@ -25,23 +25,17 @@ export class BattlegroundComponent{
 
   getPokemon1(name:string){
     this.pokemon.getPokemonData(name).subscribe(data => { 
-      this.fighterOne = (({name, base_experience, stats, sprites}) => ({name, base_experience, stats, sprites}))(data); 
-    
-      console.log(this.fighterOne.stats[0]);
-    })
-    console.log(this.fighterOne.stats[0] );
-    
+      this.fighterOne = (({name, base_experience, stats, sprites}) => ({name, base_experience, stats, sprites}))(data);   
+    });
   }
   
   getPokemon2(name:string){
     this.pokemon.getPokemonData(name).subscribe(data => { 
       this.fighterTwo = (({name, base_experience, stats, sprites}) => ({name, base_experience, stats, sprites}))(data); 
-     
-      
-    })
+    });
   }
 
-  getFightResults(fighterOne: Pokemon, fighterTwo: Pokemon) {
+  getFightResults(fighterOne: any, fighterTwo: any) {
     if (fighterOne.base_experience > fighterTwo.base_experience){
       return fighterOne
     } else {
