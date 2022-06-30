@@ -33,9 +33,13 @@ export class BattlegroundComponent implements OnInit {
   showChampion1(name:string){
     return this.Champion1
   }
+
+  getPokemon1(name:string){
+    this.pokemon.getPokemonDataChamp1(name)
+  }
   
-  getPokemon(name:string){
-    this.pokemon.getPokemonData(name)
+  getPokemon2(name:string){
+    this.pokemon.getPokemonDataChamp2(name)
   }
 
   ngOnInit(): void {
