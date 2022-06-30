@@ -44,6 +44,9 @@ input[type=text]:focus {
     height: 500px;
 }
 
+h2 {
+    color: white;
+}
 
 .fighters #one{
     -webkit-transform: scaleX(-1);
