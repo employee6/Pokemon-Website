@@ -38,7 +38,7 @@ export class PokemonDataService {
   //   });
   // }
 
-  getPokemonData(name:string):Observable<Pokemon>{
-    return this.httpClient.get<Pokemon>(this.pokemonAPIChamp1+name.toLowerCase());
+  getPokemonData(name:string):Observable<any>{
+    return this.httpClient.get<any>(this.pokemonAPIChamp1+name.toLowerCase());
   }
 }

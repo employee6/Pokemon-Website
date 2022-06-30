@@ -1,6 +1,6 @@
 export interface Pokemon {
     name : string,
-    base_experience: number;
+    base_experience: number,
     stats: [{
         hp:number,
         attack:number,
@@ -8,8 +8,5 @@ export interface Pokemon {
         special_attack:number,
         special_defense:number,
         speed:number
-    }];
-    sprites : [{
-        front_default: string
     }]
 }
